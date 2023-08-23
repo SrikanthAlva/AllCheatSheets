@@ -60,4 +60,21 @@ git checkout -b BRANCH_NAME
 ```
 Checkout existing Branch
 git checkout BRANCH_NAME
+
+Staging Changes
+git add .
+
+Commiting Changes
+git commit -m "COMMIT_MESSAGE"
+
+Publishing local branch to GitHub
+
+git push -u origin BRANCH_NAME
+```
+
+```
+Deleting Branch on Github
+git push origin --delete BRANCH_NAME
+Deleting Branch locally
+git branch --delete BRANCH_NAME
 ```
