@@ -39,3 +39,10 @@ Set up automatic deployment to your site's live channel when a PR is merged? (Y/
 What is the name of the GitHub branch associated with your site's live channel? (main) __main__
 The GitHub workflow file for deploying to the live channel already exists. Overwrite? firebase-hosting-merge.yml (y/N) __Yes__
 ```
+
+
+### Preview Channels
+
+```
+firebase hosting:channel:deploy SOME_NAME --expires 2d  
+```
