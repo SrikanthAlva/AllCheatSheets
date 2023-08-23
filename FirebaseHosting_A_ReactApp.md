@@ -41,8 +41,19 @@ The GitHub workflow file for deploying to the live channel already exists. Overw
 ```
 
 
-### Preview Channels
+### Other Tricks
 
+#### Preview Channels
 ```
 firebase hosting:channel:deploy SOME_NAME --expires 2d  
+```
+
+#### List Channels
+```
+firebase hosting:channel:list
+```
+
+#### Delete Channel
+```
+firebase hosting:channel:delete CHANNEL_ID
 ```
