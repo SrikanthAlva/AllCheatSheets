@@ -61,3 +61,10 @@ git checkout -b BRANCH_NAME
 Checkout existing Branch
 git checkout BRANCH_NAME
 ```
+
+```
+Deleting Branch on Github
+git push origin --delete BRANCH_NAME
+Deleting Branch locally
+git branch --delete BRANCH_NAME
+```
