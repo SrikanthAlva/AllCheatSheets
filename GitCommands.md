@@ -50,3 +50,14 @@ Verify your settings:
 git config --global --get user.name
 git config --global --get user.email
 ```
+
+### Branches
+
+```
+Creating New Branch
+git checkout -b BRANCH_NAME
+```
+```
+Checkout existing Branch
+git checkout BRANCH_NAME
+```
