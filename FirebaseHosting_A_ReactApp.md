@@ -57,3 +57,6 @@ firebase hosting:channel:list
 ```
 firebase hosting:channel:delete CHANNEL_ID
 ```
+
+
+firebare init hosting:github
