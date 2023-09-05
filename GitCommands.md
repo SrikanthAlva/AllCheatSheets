@@ -78,3 +78,12 @@ git push origin --delete BRANCH_NAME
 Deleting Branch locally
 git branch --delete BRANCH_NAME
 ```
+
+```
+Fetch all remote branches
+git fetch origin
+
+List all branches
+git branch -a
+
+```
