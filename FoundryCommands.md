@@ -3,26 +3,28 @@ cast --version
 anvil --version
 chisel --version
 
-
 anvil - starts local blockchain [persistant]
 
 forge init - to create a foundry project
 
 forge install smartcontractkit/chainlink-brownie-contracts@0.6.1 --no-commit
 
+```
 forge --help
 forge create --help
 forge compile
 forge create SimpleStorage --interactive [provides option to enter private key] [deploys to non persistant blockchain by default]
 forge create SimpleStorage --private-key 0x32432432432432432432 [deploys to anvil local blockchain by default]
 forge create SimpleStorage --rpc-url http://127.0.0.1:8545 --private-key 0x32432432432432432432 [deploys to the network specified]
+```
 
+```
 forge script script/DeploySimpleStorage.s.sol 
 forge script script/DeploySimpleStorage.s.sol --rpc-url http://127.0.0.1:8545 [dry-run]
 forge script script/DeploySimpleStorage.s.sol --rpc-url http://127.0.0.1:8545 --broadcast  --private-key 0x32432432432432432432 [Actual Transaction]
 
 cast - is used for reading, writing trxs, typecasting and format conversion
-
+```
 -------------
 
 create .evn file 
