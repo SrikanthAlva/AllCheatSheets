@@ -1,6 +1,7 @@
-Starknet is a L2 Protocol on Ethereum
+Starknet is an L2 Protocol on Ethereum
 
-Ethereum : Starknet
-Solidity : Cairo
-Foundry  : Startnet Foundry
-Metamask : Argent X, Bravos
+1. Ethereum : Starknet
+2. Solidity : Cairo
+3. Foundry  : Startnet Foundry
+4. Metamask : Argent X, Bravos
+5. npm,Yarn : Scarb
