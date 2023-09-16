@@ -1,0 +1,13 @@
+article , section {
+border : thin black solid;
+margin : 10px 20px;
+padding : 20px 10px;
+}
+
+article {
+	padding : 10px 300px 30px 20px; 
+}
+
+section {
+	margin : 50px;
+}
