@@ -45,7 +45,7 @@ Starknet is an L2 Protocol on Ethereum
 Comptutional Integrity - you can prove that output of certain computation is correct, right, without having to run the computation by itself.
 ```
 
-![Alt text](image.png)
+![Alt text](images/image.png)
 
 
 # Why Starknet?
@@ -57,13 +57,13 @@ L1 Block Verification is slow as the validators have to verify the complete bloc
 In Case L2's with the Block creation an additonal proof is generated.
 Validators only have to verfiy the proof, which is much smaller and faster than verfiying the complete block. Thus, improving the scalability of the overall system.
 
-![Execution vs Verification](image-2.png)
+![Execution vs Verification](images/image-2.png)
 
 # Validity Proofs
 
 Validity Proofs reduces computational time similar to ziping will reduce file size
 
-![Validity Proofs](image-3.png)
+![Validity Proofs](images/image-3.png)
 
 - A use case of Zero Knowledge Proofs
 - Used for compression, not privacy
@@ -77,16 +77,16 @@ Validity Proofs reduces computational time similar to ziping will reduce file si
 - STARK - Scalable Transparent Arguments of Knowledge
 - SNARK - Succint Non-Interactive Arguments of Knowledge
 
-![STARK vs SNARK](image-4.png)
+![STARK vs SNARK](images/image-4.png)
 
 # Why CairoVM and not EVM?
 
 - CairoVM optimizes `Performace`
 - ZKEVM optimizes `Compatibility`
 
-![ZKEVM Classifications by Vitalik](image-5.png)
+![ZKEVM Classifications by Vitalik](images/image-5.png)
 
-![L1 Finality](image-17.png)
+![L1 Finality](images/image-17.png)
 
 # Why Starknet?
 
@@ -102,24 +102,94 @@ Validity Proofs reduces computational time similar to ziping will reduce file si
 
 ## Cairo 0
 
-![Alt text](image-6.png)
+![Alt text](images/image-6.png)
 
-![Alt text](image-7.png)
+![Alt text](images/image-7.png)
 
-![Alt text](image-8.png)
+![Alt text](images/image-8.png)
 
-![Alt text](image-9.png)
+![Alt text](images/image-9.png)
 
-![Alt text](image-10.png)
+![Alt text](images/image-10.png)
 
-![Alt text](image-11.png)
+![Alt text](images/image-11.png)
 
-![Alt text](image-12.png)
+![Alt text](images/image-12.png)
 
-![Alt text](image-13.png)
+![Alt text](images/image-13.png)
 
-![Alt text](image-14.png)
+![Alt text](images/image-14.png)
 
-![Alt text](image-15.png)
+![Alt text](images/image-15.png)
 
-![Alt text](image-16.png)
+![Alt text](images/image-16.png)
+
+
+# Cairo
+
+is a Programming Language 
+
+## Common Circuits
+
+- Circom
+- Halo2
+
+## High Level Overview for Cairo to proof
+
+```
+Cairo => CASM => Air traces => Convert to Polynomials => Start Proof
+```
+
+- Noir is an alternative to Cairo
+
+Cairo and Noir allow you to write programs without worrying about circuits
+
+
+## Cairo 0 vs Cairo
+
+### Cairo 0
+
+Pyhton like
+Indents
+No Sierra
+Recursion as a workarounf for loops
+
+### Cairo
+
+Rust like
+Curly braces and semicolon
+Has Seirra
+Loops exists
+
+_Gotchas: Cairo is write once then read only after_
+
+
+felt => Feild Element 
+
+felt can store short strings upto 31 characters
+
+no way to represent string in Cairo right now
+
+it can be represented by u8[]
+
+
+@ = snapshots (borrows ownership)
+ref = mutable params
+
+// Shadowing is Possible in Cairo
+
+<!-- .. fn my_function (x: @SomeType)
+
+{
+    let x =10;
+    my_function(x);
+}
+
+fn my_function(x: @felt252){
+    // use x
+}
+
+fn my_function(ref x: felt252){
+    // 
+} -->
+
