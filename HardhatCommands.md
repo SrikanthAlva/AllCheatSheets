@@ -151,3 +151,33 @@ yarn add --dev hardhat
 yarn hardhat // Choose Empty HardhatConfig file
 
 yarn add --dev "hardhat@^2.9.9" "@nomicfoundation/hardhat-toolbox@^1.0.1" "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-chai-matchers@^1.0.0" "@nomiclabs/hardhat-ethers@^2.0.0" "@nomiclabs/hardhat-etherscan@^3.0.0" "chai@^4.2.0" "ethers@^5.4.7" "hardhat-gas-reporter@^1.0.8" "solidity-coverage@^0.7.21" "@typechain/hardhat@^6.1.2" "typechain@^8.1.0" "@typechain/ethers-v5@^10.1.0" "@ethersproject/abi@^5.4.7" "@ethersproject/providers@^5.4.7" "@types/chai@^4.2.0" "@types/mocha@^9.1.0" "@types/node@>=12.0.0" "ts-node@>=8.0.0" "typescript@>=4.5.0" "dotenv" "prettier" "prettier-plugin-solidity" "solhint" "@nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers" "ethers" "hardhat-deploy" "hardhat-contract-sizer"
+
+
+## Tips to reduce smart contract size
+
+`yarn add hardhat-contract-sizer`
+
+update hardhat.config.ts with the following code 
+`
+    contractSizer: {
+        alphaSort: true,
+        runOnCompile: true,
+        disambiguatePaths: false,
+        strict:false
+    },
+`
+
+Note: Smart Contract Size cannot be more than 24576 bytes [a limit introduced in Spurious Dragon Update]
+
+1. use private variables
+2. storage slot packing
+3. move logic into a new contracts (check this with caution, sometimes it increases the cost)
+4. Move modifier logic into a function
+5. Memory layout conditions using dynamic storage - Use Custom Errors
+6. Use Libraries
+![Alt text](image.png)
+7. Use Libraries - Linking (Explore more on this)
+![Alt text](image-1.png)
+8. Enable Optimization (200-350 runs is optimal)
+    - Common Misconception: A Higher Number means number of passes.
+    - Reality: The number means how many times the smart contract is called. Ths compiler will do as many passes as is possible.
