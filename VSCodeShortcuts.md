@@ -21,9 +21,7 @@ Ctrl + B => Open Close Sidebar
 Ctrl + \ => Split Window
 
 
-
-
-
+ALT + Z for Toggle Wordwrap
 
 
 
