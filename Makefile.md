@@ -10,14 +10,75 @@ Is typically used to write short forms for really long scripts
 
 .PHONY: all test clean ... => Indicates these keywords are not folders
 
-DEFAULT_ANVIL_KEY => Default Anvil Private Jey set Up
+DEFAULT_ANVIL_KEY => Default Anvil Private Key set Up
 
 make help => for creating custom help commands
-
-```
 
 all: clean remove install update build
 
 will clean repo, remove git modules, install dependciest, update forge and build
+
+```makefile
+-include .env
+
+build:; forge build
+test:; forge test
+deploy:; forge script script/DeplyFundMe.s.sol
+
+deploy-mumbai:
+	forge script script/DeplyFundMe.s.sol --broadcast --rpc-url $(MUMBAI_RPC_URL) --account dev --verify --verifier sourcify
+
+# Copied from Patricks Repo
+
+.PHONY: all test clean deploy fund help install snapshot format anvil
+
+DEFAULT_ANVIL_KEY := 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+
+help:
+	@echo "Usage:"
+	@echo "  make deploy [ARGS=...]\n    example: make deploy ARGS=\"--network sepolia\""
+	@echo ""
+	@echo "  make fund [ARGS=...]\n    example: make fund ARGS=\"--network sepolia\""
+
+all: clean remove install update build
+
+# Clean the repo
+clean  :; forge clean
+
+# Remove modules
+remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
+
+install :; forge install cyfrin/foundry-devops@0.0.11 --no-commit && forge install smartcontractkit/chainlink-brownie-contracts@0.6.1 --no-commit && forge install foundry-rs/forge-std@v1.5.3 --no-commit
+
+# Update Dependencies
+update:; forge update
+
+build:; forge build
+
+test :; forge test
+
+snapshot :; forge snapshot
+
+format :; forge fmt
+
+anvil :; anvil -m 'test test test test test test test test test test test junk' --steps-tracing --block-time 1
+
+NETWORK_ARGS := --rpc-url http://localhost:8545 --private-key $(DEFAULT_ANVIL_KEY) --broadcast
+
+ifeq ($(findstring --network sepolia,$(ARGS)),--network sepolia)
+	NETWORK_ARGS := --rpc-url $(SEPOLIA_RPC_URL) --private-key $(PRIVATE_KEY) --broadcast --verify --etherscan-api-key $(ETHERSCAN_API_KEY) -vvvv
+endif
+
+deploy:
+	@forge script script/DeployFundMe.s.sol:DeployFundMe $(NETWORK_ARGS)
+
+# For deploying Interactions.s.sol:FundFundMe as well as for Interactions.s.sol:WithdrawFundMe we have to include a sender's address `--sender <ADDRESS>`
+SENDER_ADDRESS := <sender's address>
+
+fund:
+	@forge script script/Interactions.s.sol:FundFundMe --sender $(SENDER_ADDRESS) $(NETWORK_ARGS)
+
+withdraw:
+	@forge script script/Interactions.s.sol:WithdrawFundMe --sender $(SENDER_ADDRESS) $(NETWORK_ARGS)
 
 ```

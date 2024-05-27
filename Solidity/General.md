@@ -1,4 +1,6 @@
-### Order of writing code in solidity
+# Solidity General Tips
+
+## Order of writing code in solidity
 
 0. License
 1. Pragma
@@ -40,3 +42,7 @@
 -   private
 -   internal & private view & pure functions
 -   external & public view & pure functions
+
+## CEI
+
+CEI - Checks Effects and Interactions

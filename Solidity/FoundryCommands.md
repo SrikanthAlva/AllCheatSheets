@@ -1,5 +1,18 @@
 # Foundry Commands
 
+## Foundry installation
+
+```
+curl -L https://foundry.paradigm.xyz | bash
+
+# close the terminal and open new one
+
+foundryup
+
+```
+
+### Verify Installtion
+
 ```
 forge --version
 cast --version
@@ -10,7 +23,8 @@ chisel --version
 ## Anvil
 
 ```
-anvil - starts local blockchain [persistant]
+# starts local blockchain persistant
+anvil
 ```
 
 ## Forge
@@ -23,7 +37,7 @@ forge fmt - formats code
 ```
 
 ```
-forge install smartcontractkit/chainlink-brownie-contracts@0.6.1 --no-commit
+forge install smartcontractkit/chainlink-brownie-contracts --no-commit
 forge install Cyfrin/foundry-devops --no-commit
 ```
 
@@ -201,5 +215,3 @@ What can we do to work with addresses otuside our system?
 2. Integration - Testing how our code works with other parts of our code
 3. Forked - Testing our code on a simulated real environment
 4. Staging - Testing our code in a real environment that is not prod
-
-

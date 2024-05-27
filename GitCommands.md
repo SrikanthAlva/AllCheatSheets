@@ -87,3 +87,46 @@ List all branches
 git branch -a
 
 ```
+
+---
+
+
+# The Perfect Commit
+
+- Add the right changes
+- Add a proper commit changes
+- Use staging to manage this
+- Git Add Patch can add parts of a file change.
+- commit Message has two parts
+    -   Subject - concise
+    -   Body - decriptive 
+-  while entering commit message Press Enter to Add the Body of the commit message
+
+
+# Branching Strategies
+
+-   Have a written convention to agree on Branching Workflow in the team
+
+ 
+## Mainline Development (Always be Integrating)
+## State,Release and Feature Branches
+
+# Long Running Branches
+
+Exists throughout the complete lifecycle of the project. Often they mirror stages in your dev life cycle
+
+common convention: no direct commits
+
+- Main
+- QA
+- Dev
+
+# Short Lived Branches
+
+-   for new features, bug fixes, refactoring, experiments
+-   will be deleted after integration
+
+
+
+
+
