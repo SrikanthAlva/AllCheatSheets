@@ -1,9 +1,0 @@
-Always unsubscribe the subscriptions.If not, it will cause increase in memory leaks in the applications and the applications becomes bulky over time.
-[Ran Tayeb had to modify a lot of code to include the unsubscribe code in arround 91 files. It looked bad on every other programmer in the team.]
-
-Check for proper naming of the functions and variables in the applications.
-
-Include comments at complex codes.
-
-Use modular approach. divide tasks into smaller functions.
-
