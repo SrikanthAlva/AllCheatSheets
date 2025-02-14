@@ -126,6 +126,11 @@ common convention: no direct commits
 -   for new features, bug fixes, refactoring, experiments
 -   will be deleted after integration
 
+# Find Active Ports and kill it
+
+- `lsof -i tcp:5000`
+- `kill -9 <PID>`
+
 
 
 
